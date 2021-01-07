@@ -25,7 +25,7 @@ namespace TrOCR
 
         public static void ProgramStart()
         {
-            ProgramStarted = new EventWaitHandle(false, EventResetMode.AutoReset, "天若OCR文字识别", out createNew);
+            ProgramStarted = new EventWaitHandle(false, EventResetMode.AutoReset, "OCR文字识别", out createNew);
         }
 
         [STAThread]
@@ -77,7 +77,7 @@ namespace TrOCR
             {
                 var fmflags2 = new FmFlags();
                 fmflags2.Show();
-                fmflags2.DrawStr("天若OCR文字识别");
+                fmflags2.DrawStr("OCR文字识别");
             }
 
             Application.Run(new FmMain());
@@ -177,7 +177,7 @@ namespace TrOCR
                 else
                 {
                     Process.Start("Data\\update.exe", " " + json["main_url"].Value<string>() + " " +
-                                                      Path.Combine(Application.ExecutablePath, "天若OCR文字识别.exe"));
+                                                      Path.Combine(Application.ExecutablePath, "OCR文字识别.exe"));
                     Environment.Exit(0);
                 }
             }
